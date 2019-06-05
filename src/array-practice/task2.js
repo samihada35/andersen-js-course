@@ -15,14 +15,3 @@
  * console.log(arrayDiff([1, 2, 3], [1, 2, 4])); -> [3, 4]
  * console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4'])); -> [4, '4']
  */
-
- 
- // получение уникальных значений из 2-х массивов
-function arrayDiff (arr1,arr2) {
-  var arr1;
-  var arr2;
-  var newArr = arr1.concat(arr2);
-  let setArr = new Set(newArr);
-  console.log(setArr);
-}
-arrayDiff ([1, 3, 3, 4], [1, 3, '4']);

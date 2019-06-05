@@ -14,14 +14,3 @@
  * console.log(any([0, 0, 1, 0])); -> true
  * console.log(any([0, 0, 0, 0])); -> false
  */
-function any (arr,isTrue) {
-  var arr;
-  function isTrue(value) {
-    // eslint-disable-next-line no-compare-neg-zero
-    return value != 0 && value != undefined && value != -0 && value != null;
-}
-  // eslint-disable-next-line no-console
-  console.log(arr.some(isTrue));
-}
-
-any ([0,0,1,0]);
