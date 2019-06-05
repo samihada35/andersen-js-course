@@ -15,7 +15,7 @@
 function forEachRight(arr, rev) {
   // eslint-disable-next-line no-redeclare
   var arr;
-  var arg = arr.reduse(function rev(arr, current) {
+  var arg = arr.reduce(function rev(arr, current) {
     arr.reverse();
     var current;
     // eslint-disable-next-line no-console
