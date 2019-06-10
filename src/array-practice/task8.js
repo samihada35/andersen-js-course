@@ -11,3 +11,28 @@
  * console.log(without([2, 1, 2, 3], 1, 2)) -> [3]
  * console.log(without([2, 1, 10, 20], 1, 2)) -> [10, 20]
  */
+
+ //через forEach
+export function without(arr, ...args) {
+  var arrRes = [];
+  arr.forEach(function(item) {
+    if (args.includes(item)) {
+      return false;
+    } 
+    arrRes.push(item);
+  });
+  return arrRes;
+}
+without ([2,1,2,3],1,2);
+
+//через filter
+export function without(arr, ...args) {
+  var arrRes = arr.filter(function (item) {
+      if (args.includes(item)) {
+          return false;
+      }
+      return true;
+  })
+  return arrRes;
+}
+without ([2,1,2,3],1,2);
