@@ -13,3 +13,21 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+// ф-ция, которая возвращает объект с методом next
+
+export function* createGenerator(val) {
+  yield console.log(val[0]);
+  yield console.log(val[1]);
+  yield console.log(val[2]);
+  yield console.log(val[3]);
+  yield console.log(val[4]);
+  yield console.log(val[5]);
+}
+const generator = createGenerator([1, '6', 3, 2]);
+generator.next(); //-> 1
+generator.next(); //-> '6'
+generator.next(); //-> 3
+generator.next(); //-> 2
+generator.next(); //-> 'Complete!'
+generator.next(); //-> 'Complete!'
+
