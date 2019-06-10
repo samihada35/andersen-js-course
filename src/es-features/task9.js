@@ -13,8 +13,13 @@ export function task9Old() {
 
   return [result, findResult];
 }
-
+// find, includes
 // Напишите реализацию функции task9Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task9New() {}
+export function task9New() {
+  const result = 'test'.includes('est');
+  const findResult = [22, 1, 90, 70].find(item => item < 3);
+  return [result, findResult];
+}
+task9New()
