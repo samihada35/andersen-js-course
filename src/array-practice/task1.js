@@ -1,3 +1,5 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable import/prefer-default-export */
 /**
  * Реализовать функцию any в этом файле, и экспортировать ее.
  *
@@ -14,14 +16,14 @@
  * console.log(any([0, 0, 1, 0])); -> true
  * console.log(any([0, 0, 0, 0])); -> false
  */
-function any (arr,isTrue) {
-  var arr;
-  function isTrue(value) {
-    // eslint-disable-next-line no-compare-neg-zero
-    return value != 0 && value != undefined && value != -0 && value != null;
+export function any(arr, isTrue) {
+  if (typeof isTrue === 'function') {
+    console.log(arr.some(isTrue));
+  } else {
+    function isTrueDefault(value) {
+      return !!value;
+    }
+    console.log(arr.some(isTrueDefault));
+  }
 }
-  // eslint-disable-next-line no-console
-  console.log(arr.some(isTrue));
-}
-
-any ([0,0,1,0]);
+any([0, 0, 1, 0], x => x >= 2);
