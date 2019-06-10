@@ -9,11 +9,10 @@
  */
 
 function union (arr1,arr2) {
-  var arr1;
-  var arr2;
   var newArr = arr1.concat(arr2);
   let setArr = new Set(newArr);
+  let array = Array.from(setArr);
   // eslint-disable-next-line no-console
-  console.log(setArr);
+  console.log(array);
 }
 union([5, 1, 3, 3, 4], [1, 3, 4]);
