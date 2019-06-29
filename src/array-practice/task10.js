@@ -17,4 +17,20 @@
 //   { name: 'React', isActive: true, members: 500 },
 // ];
 
-// function membersOnActiveMeetups(meetups) {}
+ export function membersOnActiveMeetups(meetups) {
+  const meetups = [
+    { name: 'JavaScript', isActive: true, members: 100 },
+    { name: 'Angular', isActive: true, members: 900 },
+    { name: 'Node', isActive: false, members: 600 },
+    { name: 'React', isActive: true, members: 500 },
+    ];
+    var meetupsTrue = meetups.filter(function(val){
+      return {isActive : true};
+    })
+    var arr2 = meetupsTrue.map (a=>a.members);
+    var res = arr2.reduce (function getSum (sum, current) {
+        return sum+current;
+    });
+    console.log(res-600);
+ }
+ membersOnActiveMeetups();

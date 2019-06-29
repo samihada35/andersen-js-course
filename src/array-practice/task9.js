@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * Реализовать функцию indexOfAll в этом файле, и экспортировать ее.
  *
@@ -10,3 +11,18 @@
  * console.log(indexOfAll([1, 2, 3, 1, 2, 3], 1)); -> [0, 3]
  * console.log(indexOfAll([1, 2, 3], 4)); -> []
  */
+
+export function indexOfAll(arr, arg) {
+  var arrRes = [];
+  function searchIndex() {
+    arr.forEach(function(v, i) {
+      if (v === arg) {
+        arrRes.push(i);
+      }
+      return false;
+    });
+    return arrRes;
+  }
+  return searchIndex();
+}
+indexOfAll([1, 2, 3, 1, 2, 3], 1);

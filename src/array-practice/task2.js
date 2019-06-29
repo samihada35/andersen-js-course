@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * Реализовать функцию arrayDiff в этом файле, и экспортировать ее.
  *
@@ -15,3 +16,25 @@
  * console.log(arrayDiff([1, 2, 3], [1, 2, 4])); -> [3, 4]
  * console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4'])); -> [4, '4']
  */
+
+// получение уникальных значений из 2-х массивов
+
+// через циклы. объеденить 2 -> пройти по массивам -> если встреч -> удаляем фильтер
+
+export ffunction arrayDiff(arr1, arr2) {
+  var arrRes = [];
+  arr1.forEach(function(item, arr1) {
+    if (arr2.includes(item)) {
+      return false;
+    } 
+    arrRes.push(item);
+  });
+  arr2.forEach(function(item, arr2) {
+    if (arr1.includes(item)) {
+      return false;
+    } 
+    arrRes.push(item);
+  });
+  console.log (arrRes);
+  }
+  arrayDiff([1, 2, 3, "8"], [1, 2, 4]);

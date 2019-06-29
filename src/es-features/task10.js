@@ -54,4 +54,49 @@ export function task10Old() {
 // Изменить тело функции task10Old, написав task10New, где заиспользуете
 // класс так, как использовалась функция-конструктор B в task10Old
 
-export function task10New() {}
+export function task10New() {
+  class A {
+    constructor(name) {
+      this.name = name;
+    }
+
+    getName() {
+      return this.name;
+    }
+  }
+
+  class B extends A {
+    constructor(name, age, color) {
+      super(name);
+      this.age = age;
+      this._color = color;
+    }
+
+    getName(text) {
+      super.getName();
+      return `${this.name}${text}`;
+    }
+
+    getAge() {
+      return this.age;
+    }
+  }
+
+  Object.defineProperty(B.prototype, 'color', {
+    get: function() {
+      return this._color;
+    },
+    set: function(color) {
+      this._color = color;
+    },
+  });
+  let b = new B('Max', 12);
+  let defaultUser = new B('test', 0);
+  console.log(b.getName('Best')); // Max Best
+  console.log(b.getAge()); // 12
+  console.log(defaultUser); // {name: 'test', age: 0}
+  b.color = 'red';
+  console.log(b.color); // red
+  return b;
+}
+task10New();
